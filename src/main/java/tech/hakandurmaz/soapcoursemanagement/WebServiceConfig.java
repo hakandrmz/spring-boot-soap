@@ -14,9 +14,6 @@ import org.springframework.xml.xsd.XsdSchema;
 @EnableWs
 @Configuration
 public class WebServiceConfig {
-    //message dispatcher servlet
-    //application context
-    //url -> /ws/*
 
     @Bean
     public ServletRegistrationBean messageDispatcherServlet(ApplicationContext context) {
@@ -25,11 +22,6 @@ public class WebServiceConfig {
         messageDispatcherServlet.setTransformWsdlLocations(true);
         return new ServletRegistrationBean<>(messageDispatcherServlet,"/ws/*");
     }
-
-    // /ws/courses.wsdl
-    // course port
-    // namespace - http://hakandurmaz.tech/courses
-    // course-details.xsd
 
     @Bean(name = "courses")
     public DefaultWsdl11Definition defaultWsdl11Definition(XsdSchema coursesSchema) {
