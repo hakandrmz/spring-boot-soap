@@ -36,5 +36,26 @@
 
         </xs:complexType>
     </xs:element>
+    <xs:element name="DeleteCourseDetailsRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="id" type="xs:integer"></xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="DeleteCourseDetailsResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="status" type="tns:Status"></xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:simpleType name="Status">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="SUCCESS"></xs:enumeration>
+            <xs:enumeration value="FAILURE"></xs:enumeration>
+        </xs:restriction>
+    </xs:simpleType>
 
 </xs:schema>
